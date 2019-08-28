@@ -8,7 +8,7 @@ let connection;
 
 const setupInput = function (conn) {
   connection = conn;
-  
+
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
   stdin.on('data', handleUserInput);
@@ -32,6 +32,12 @@ const handleUserInput = function (key) {
     }
     if (key === 'a') {
       connection.write('Move: left');
+    }
+    if (key === 'e') {
+      connection.write('Say: Hellooo');
+    }
+    if (key === 'r') {
+      connection.write('Say: Blah');
     }
 }
 
